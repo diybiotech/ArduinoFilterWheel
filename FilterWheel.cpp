@@ -12,17 +12,18 @@
 
 
 #ifdef WIN32
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#define snprintf _snprintf
+	#define WIN32_LEAN_AND_MEAN
+	#include <windows.h>
+	#define snprintf _snprintf
 #endif
 
 #include "FilterWheel.h"
-#include <cstdio>
+#include <cstdlib>
 #include <string>
+#include <map>
 #include <math.h>
-#include "../../MMDevice/ModuleInterface.h"
 #include <sstream>
+#include "../../MMDevice/ModuleInterface.h"
 
 using namespace std;
 
@@ -36,25 +37,25 @@ const char *g_DeviceName = "Arduino Filter Wheel";
 // Exported MMDevice API
 ///////////////////////////////////////////////////////////////////////////////
 
-MODULE_API void InitializeModuleData() {
-    RegisterDevice(g_DeviceName, MM::StateDevice, "Arduino Filter Wheel");
-}
-
-MODULE_API MM::Device *CreateDevice(const char *deviceName) {
-    if (deviceName == 0)
-        return 0;
-
-
-    if (strcmp(deviceName, g_DeviceName) == 0) {
-        return new ArduinoFilterWheel();
-    }
-
-    return 0;
-}
-
-MODULE_API void DeleteDevice(MM::Device *pDevice) {
-    delete pDevice;
-}
+//MODULE_API void InitializeModuleData() {
+//    RegisterDevice(g_DeviceName, MM::StateDevice, "Arduino Filter Wheel");
+//}
+//
+//MODULE_API MM::Device *CreateDevice(const char *deviceName) {
+//    if (deviceName == 0)
+//        return 0;
+//
+//
+//    if (strcmp(deviceName, g_DeviceName) == 0) {
+//        return new ArduinoFilterWheel();
+//    }
+//
+//    return 0;
+//}
+//
+//MODULE_API void DeleteDevice(MM::Device *pDevice) {
+//    delete pDevice;
+//}
 
 
 

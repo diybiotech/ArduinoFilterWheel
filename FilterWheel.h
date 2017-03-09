@@ -26,8 +26,11 @@
 
 #include "../../MMDevice/MMDevice.h"
 #include "../../MMDevice/DeviceBase.h"
+#include <cstdlib>
 #include <string>
 #include <map>
+#include <math.h>
+#include <sstream>
 
 //////////////////////////////////////////////////////////////////////////////
 // Error codes
